@@ -11,6 +11,12 @@ menuMobileIcon.addEventListener('click', tooglemobileMenu)
 carIcon.addEventListener('click', toogleaside)
 
 function toogleDesktopMenu() {
+    const asideClosed = aside.classList.contains('inactive');
+
+    if (!asideClosed) {
+        aside.classList.add('inactive')
+    }
+
     desktopMenu.classList.toggle('inactive')    
 }
 
@@ -26,9 +32,14 @@ function tooglemobileMenu() {
 
 function toogleaside() {
     const mobileMenuClosed = mobileMenu.classList.contains('inactive');
+    const desktopMenuClosed = desktopMenu.classList.contains('inactive');
 
     if (!mobileMenuClosed) {
         mobileMenu.classList.add('inactive')
+    }
+
+    if (!desktopMenuClosed) {
+        desktopMenu.classList.add('inactive');
     }
 
     aside.classList.toggle('inactive')
